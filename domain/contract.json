@@ -1,10 +1,12 @@
 {
   "project": "档口峰值容量治理",
+  "version": "2.0",
   "entities": [
     "tenant",
     "space",
     "cargo_lot",
-    "move_task"
+    "move_task",
+    "emergency_permit"
   ],
   "states": [
     "planned",
@@ -12,17 +14,35 @@
     "moving",
     "placed",
     "released",
-    "expired"
+    "expired",
+    "cancelled",
+    "pending_review"
   ],
   "event_types": [
     "cargo.declared",
     "space.held",
     "move.started",
     "move.completed",
-    "space.released"
+    "space.released",
+    "move.approved",
+    "move.interrupted",
+    "move.reviewed",
+    "plan.adjusted",
+    "plan.cancelled",
+    "plan.expired",
+    "permit.requested",
+    "permit.approved",
+    "permit.granted",
+    "permit.expired",
+    "permit.revoked",
+    "space.force_released",
+    "encroachment.reported",
+    "encroachment.resolved"
   ],
   "time_policy": "ISO 8601 with timezone",
   "identifier_policy": "业务标识在同一类型内唯一",
-  "version_policy": "发布后的规则以新版本追加"
+  "version_policy": "发布后的规则以新版本追加",
+  "changelog": {
+    "2.0": "新增紧急放行两人批准、异常恢复裁定、计划调整、强制清退与相邻禁忌事件"
+  }
 }
-

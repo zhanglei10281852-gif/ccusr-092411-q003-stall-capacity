@@ -1,7 +1,7 @@
 [project]
 name = "ccusr-stall-capacity"
 version = "0.1.0"
-description = "档口空间、临时区域、货物与搬运任务的领域资料"
+description = "档口峰值容量治理：空间账、接货判断、紧急放行与腾挪调度"
 requires-python = ">=3.11"
 dependencies = []
 
