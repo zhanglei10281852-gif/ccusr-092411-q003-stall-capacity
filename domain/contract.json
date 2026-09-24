@@ -1,10 +1,23 @@
 {
   "project": "档口峰值容量治理",
+  "version": 2,
   "entities": [
     "tenant",
     "space",
     "cargo_lot",
-    "move_task"
+    "move_task",
+    "move_step",
+    "closure_notice",
+    "occupancy_violation",
+    "emergency_grant",
+    "ledger_entry",
+    "relocation_plan"
+  ],
+  "space_kinds": [
+    "fixed_stall",
+    "temp_area",
+    "shelf_level",
+    "fire_lane"
   ],
   "states": [
     "planned",
@@ -12,17 +25,73 @@
     "moving",
     "placed",
     "released",
-    "expired"
+    "expired",
+    "cancelled",
+    "completed",
+    "reserved"
   ],
+  "state_machines": {
+    "move_task": [
+      "planned -> approved",
+      "approved -> moving",
+      "moving -> completed",
+      "planned -> cancelled",
+      "moving -> cancelled"
+    ],
+    "hold": [
+      "reserved -> placed",
+      "reserved -> cancelled",
+      "placed -> released",
+      "reserved -> expired",
+      "placed -> expired"
+    ],
+    "emergency_grant": [
+      "pending_second_approval -> active",
+      "pending_second_approval -> rejected",
+      "active -> reclaimed"
+    ],
+    "occupancy_violation": [
+      "open -> resolved"
+    ]
+  },
   "event_types": [
     "cargo.declared",
     "space.held",
     "move.started",
     "move.completed",
-    "space.released"
+    "space.released",
+    "space.registered",
+    "space.closed",
+    "space.reopened",
+    "move.planned",
+    "move.approved",
+    "move.step_recorded",
+    "move.cancelled",
+    "plan.adjusted",
+    "occupancy.observed",
+    "violation.recorded",
+    "clearance.ordered",
+    "relocation.planned",
+    "relocation.step_executed",
+    "emergency.requested",
+    "emergency.approved",
+    "emergency.rejected",
+    "emergency.reclaimed",
+    "hold.expired",
+    "billing.charged",
+    "recovery.decided"
   ],
   "time_policy": "ISO 8601 with timezone",
   "identifier_policy": "业务标识在同一类型内唯一",
-  "version_policy": "发布后的规则以新版本追加"
+  "version_policy": "发布后的规则以新版本追加",
+  "version_history": [
+    {
+      "version": 1,
+      "note": "初始四类实体与五个基础事件"
+    },
+    {
+      "version": 2,
+      "note": "追加货架层位/封闭通知/违规/紧急放行/账单/腾挪计划实体，追加审批、步骤留痕、双人放行、回收、恢复决策事件与 hold/move 细分状态"
+    }
+  ]
 }
-

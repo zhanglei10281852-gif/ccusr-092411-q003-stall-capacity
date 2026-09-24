@@ -16,5 +16,65 @@
     "event_type": "move.started",
     "aggregate_id": "move-001",
     "occurred_at": "2026-09-23T10:00:00+08:00"
+  },
+  {
+    "event_id": "evt-004",
+    "event_type": "space.closed",
+    "aggregate_id": "space-TEMP2",
+    "occurred_at": "2026-09-24T06:30:00+08:00"
+  },
+  {
+    "event_id": "evt-005",
+    "event_type": "plan.adjusted",
+    "aggregate_id": "hold-77a1",
+    "occurred_at": "2026-09-24T07:05:00+08:00"
+  },
+  {
+    "event_id": "evt-006",
+    "event_type": "violation.recorded",
+    "aggregate_id": "viol-92cd",
+    "occurred_at": "2026-09-24T09:12:00+08:00"
+  },
+  {
+    "event_id": "evt-007",
+    "event_type": "emergency.requested",
+    "aggregate_id": "grant-0e3b",
+    "occurred_at": "2026-09-24T09:20:00+08:00"
+  },
+  {
+    "event_id": "evt-008",
+    "event_type": "emergency.approved",
+    "aggregate_id": "grant-0e3b",
+    "occurred_at": "2026-09-24T09:24:00+08:00"
+  },
+  {
+    "event_id": "evt-009",
+    "event_type": "clearance.ordered",
+    "aggregate_id": "order-51f0",
+    "occurred_at": "2026-09-24T09:40:00+08:00"
+  },
+  {
+    "event_id": "evt-010",
+    "event_type": "relocation.planned",
+    "aggregate_id": "plan-3402",
+    "occurred_at": "2026-09-24T09:45:00+08:00"
+  },
+  {
+    "event_id": "evt-011",
+    "event_type": "move.step_recorded",
+    "aggregate_id": "move-aa91",
+    "occurred_at": "2026-09-24T10:02:00+08:00"
+  },
+  {
+    "event_id": "evt-012",
+    "event_type": "recovery.decided",
+    "aggregate_id": "move-7c04",
+    "occurred_at": "2026-09-24T10:31:00+08:00"
+  },
+  {
+    "event_id": "evt-013",
+    "event_type": "emergency.reclaimed",
+    "aggregate_id": "grant-0e3b",
+    "occurred_at": "2026-09-24T12:00:00+08:00"
   }
 ]
