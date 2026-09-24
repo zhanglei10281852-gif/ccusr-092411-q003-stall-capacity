@@ -1,0 +1,28 @@
+{
+  "project": "档口峰值容量治理",
+  "entities": [
+    "tenant",
+    "space",
+    "cargo_lot",
+    "move_task"
+  ],
+  "states": [
+    "planned",
+    "approved",
+    "moving",
+    "placed",
+    "released",
+    "expired"
+  ],
+  "event_types": [
+    "cargo.declared",
+    "space.held",
+    "move.started",
+    "move.completed",
+    "space.released"
+  ],
+  "time_policy": "ISO 8601 with timezone",
+  "identifier_policy": "业务标识在同一类型内唯一",
+  "version_policy": "发布后的规则以新版本追加"
+}
+

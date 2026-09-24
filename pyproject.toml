@@ -1,0 +1,10 @@
+[project]
+name = "ccusr-stall-capacity"
+version = "0.1.0"
+description = "档口空间、临时区域、货物与搬运任务的领域资料"
+requires-python = ">=3.11"
+dependencies = []
+
+[tool.unittest]
+start-directory = "tests"
+
